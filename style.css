@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000 0%, #FFFFFF  100%);
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.images {
+  display: flex;
+  gap: 20px;
+}
+
+.image {
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+  border-radius: 20px;
+}
+
+.image.active {
+  opacity: 1;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}
+
+.hero-title,
+.hero-description {
+  transition: color 0.3s ease;
+}
+
+.hero:hover .hero-title,
+.hero:hover .hero-description {
+  color: #000000;
+}
+
+.hero.show .content {
+  opacity: 1;
+  transform: translateY(0);
+}
